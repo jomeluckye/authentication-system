@@ -34,16 +34,14 @@ const connectDB = async () => {
    try {
       await mongoose.connect(MONGO_URI, {
          useNewUrlParser: true,
-         useCreateIndex: true,
-         useUnifiedTopology: true,
-         useFindAndModify: false
+         useUnifiedTopology: true
       });
 
       console.log("MongoDB connected...");
 
       // Seed data
    } catch (err) {
-      console.log(err.message);
+      console.error(err.message);
 
       //Exit with failure
       process.exit(1);

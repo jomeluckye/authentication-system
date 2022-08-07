@@ -23,13 +23,18 @@ const UserSchema = mongoose.Schema(
         },
         userRole:{
             type: String,
-            enum: ["admin", "staff", "managers", "users"],
+            enum: ["admin", "staff", "managers", "not assigned "],
             default: "not assigned"
         },
-        isTutor:{
+        isStaff:{
             type: Boolean,
             default: 0
         },
+        isManager:{
+            type: Boolean,
+            default: 0
+        },
+
         isAdmin:{
             type: Boolean,
             default: 0
